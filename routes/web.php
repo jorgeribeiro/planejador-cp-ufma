@@ -15,9 +15,7 @@ Route::get('/', function() {
     return view('home');
 });
 
-Route::get('/planejador', function() {
-    return view('planejador');
-});
+Route::get('/planejador', 'PlanejadorController@index');
 
 Route::post('/login', 'SessionsController@store');
 

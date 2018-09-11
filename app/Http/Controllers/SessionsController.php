@@ -17,12 +17,13 @@ class SessionsController extends Controller
             $aluno->matricula = $request->matricula;
             $aluno->save();
         }
-        // TODO: registrar session
+        $request->session()->put('matricula', $aluno->matricula);
         return redirect('planejador');
     }
 
-    public function destroy() {
-        // TODO: destruir session
+    public function destroy(Request $request) {
+        $request->session()->flush();
         return redirect('/');
     }
+
 }
