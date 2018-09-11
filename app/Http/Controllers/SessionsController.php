@@ -2,7 +2,6 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Support\Facades\DB;
 use Illuminate\Http\Request;
 
 use App\Aluno;
@@ -10,18 +9,20 @@ use App\Aluno;
 class SessionsController extends Controller
 {
 
-    public function store() {
-        $aluno = DB::table('alunos')->where('matricula', request('matricula'))->first();
+    public function store(Request $request) {
+        $aluno = Aluno::where('matricula', $request->matricula)->first();
         if (!$aluno) {
-            $aluno = Aluno::create([
-                'nome' => request('nome'),
-                'matricula' => request('matricula')
-            ]);
-        }        
+            $aluno = new Aluno;
+            $aluno->nome = $request->nome;
+            $aluno->matricula = $request->matricula;
+            $aluno->save();
+        }
+        // TODO: registrar session
         return redirect('planejador');
     }
 
     public function destroy() {
-
+        // TODO: destruir session
+        return redirect('/');
     }
 }
