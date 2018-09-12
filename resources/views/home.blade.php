@@ -32,13 +32,13 @@
                                 <div class="field">
                                     <label class="label">Nome</label>
                                     <div class="control">
-                                        <input class="input" type="text" id="nome" name="nome" required>
+                                        <input class="input" type="text" name="nome" required>
                                     </div>
                                 </div>
                                 <div class="field">
                                     <label class="label">Matrícula</label>
                                     <div class="control">
-                                        <input class="input" type="text" id="matricula" name="matricula" required>
+                                        <input class="input" type="text" name="matricula" required>
                                     </div>
                                 </div>
                                 <div class="field is-pulled-right">

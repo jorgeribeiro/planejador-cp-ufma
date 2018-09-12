@@ -15,7 +15,15 @@ Route::get('/', function() {
     return view('home');
 });
 
+Route::get('/dicas', function() {
+    return view('dicas');
+});
+
 Route::get('/planejador', 'PlanejadorController@index');
+
+Route::get('/disciplinas', 'DisciplinasController@index');
+
+Route::post('/adicionar_disciplinas', 'DisciplinasController@store');
 
 Route::post('/login', 'SessionsController@store');
 

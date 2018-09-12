@@ -17,6 +17,8 @@ class SessionsController extends Controller
             $aluno->matricula = $request->matricula;
             $aluno->save();
         }
+        $request->session()->put('aluno_id', $aluno->id);
+        $request->session()->put('nome', $aluno->nome);
         $request->session()->put('matricula', $aluno->matricula);
         return redirect('planejador');
     }
