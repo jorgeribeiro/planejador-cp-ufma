@@ -8,7 +8,7 @@
                 <div class="column">
                     <div>
                         <p class="title is-5 has-text-link">Obrigatórias</p>
-                    </div>
+                    </div>                    
                     <table class="table is-narrow">
                         <thead>
                             <tr>
@@ -24,7 +24,7 @@
                                     <td>{{ $disciplina->carga_horaria }}h</td>
                                     <td>
                                         <label class="checkbox">
-                                            <input type="checkbox" name="disciplinas_obrigatorias_selecionadas[]" value="{{ $disciplina->id }}">                                            
+                                            <input type="checkbox" name="disciplinas_selecionadas[]" value="{{ $disciplina->id }}">                                            
                                         </label>
                                     </td>
                                 </tr>                        
@@ -51,7 +51,7 @@
                                     <td>{{ $disciplina->carga_horaria }}h</td>
                                     <td>
                                         <label class="checkbox">
-                                            <input type="checkbox" name="disciplinas_grupo_i_selecionadas[]" value="{{ $disciplina->id }}">                                            
+                                            <input type="checkbox" name="disciplinas_selecionadas[]" value="{{ $disciplina->id }}">                                            
                                         </label>
                                     </td>
                                 </tr>                        
@@ -78,7 +78,7 @@
                                     <td>{{ $disciplina->carga_horaria }}h</td>
                                     <td>
                                         <label class="checkbox">
-                                            <input type="checkbox" name="disciplinas_grupo_ii_selecionadas[]" value="{{ $disciplina->id }}">                                            
+                                            <input type="checkbox" name="disciplinas_selecionadas[]" value="{{ $disciplina->id }}">                                            
                                         </label>
                                     </td>
                                 </tr>                        
@@ -104,15 +104,15 @@
                     <div class="field">
                         <label class="label">Ano</label>
                         <div class="control">
-                            <input class="input" name="ano" type="text" required>
-                            <p class="help">2014, 2015, 2016...</p>
+                        <input class="input" name="ano" type="text" value="{{ old('ano') }}" required>
+                            <p class="help">2015, 2016, 2017, 2018, 2019...</p>
                         </div>                                          
                     </div>
 
                     <div class="field">
                         <label class="label">Semestre</label>
                         <div class="control">
-                            <input class="input" name="semestre" type="text" required>
+                            <input class="input" name="semestre" type="text" value="{{ old('semestre') }}" required>
                             <p class="help">1 ou 2</p>
                         </div>                                                            
                     </div>
@@ -124,6 +124,24 @@
                             </button>
                         </div>
                     </div>
+
+                    @if (session('message'))
+                    <article class="message is-sucess">
+                            <div class="message-body">
+                                {{ session('message') }}
+                            </div>
+                        </article>
+                    @endif
+
+                    @if (count($errors))
+                        <article class="message is-danger">
+                            <div class="message-body">
+                                <p>- Selecione pelo menos uma disciplina</p>
+                                <p>- Ano precisa ter 4 caracteres (ex: 2018)</p>
+                                <p>- Semestre precisa ter 1 caractere (ex: 1)</p>
+                            </div>
+                        </article>
+                    @endif
                 </div>
             </div>
         </form>

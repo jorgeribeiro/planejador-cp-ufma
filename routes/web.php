@@ -15,6 +15,7 @@ Route::get('/', function() {
     return view('home');
 });
 
+// Verificar session para página de Dicas
 Route::get('/dicas', function() {
     return view('dicas');
 });

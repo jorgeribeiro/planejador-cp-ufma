@@ -26,12 +26,12 @@
     </div>
 
     <div class="navbar-menu">
-        <div class="navbar-start">
-            <a class="navbar-item" href="/disciplinas">
-                Disciplinas
-            </a>
+        <div class="navbar-start">            
             <a class="navbar-item" href="/planejador">
                 Planejador
+            </a>
+            <a class="navbar-item" href="/disciplinas">
+                Disciplinas
             </a>
             <a class="navbar-item" href="/dicas">
                 Dicas para se graduar mais rápido

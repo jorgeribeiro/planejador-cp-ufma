@@ -12,10 +12,12 @@ class DisciplinasController extends Controller
 {
 
     public function index(Request $request) {
-        if ($request->session()->get('matricula')) {
-            $disciplinas_obrigatorias = Disciplina::where('tipo', 'Obrigatória')->orderBy('nome')->get();
-            $disciplinas_grupo_i = Disciplina::where('tipo', 'Grupo I')->orderBy('nome')->get();
-            $disciplinas_grupo_ii = Disciplina::where('tipo', 'Grupo II')->orderBy('nome')->get();
+        $aluno = Aluno::where('matricula', $request->session()->get('matricula'))->first();
+        if ($aluno) {
+            $disciplinas_obrigatorias = $aluno->disciplinasObrigatoriasDisponiveis();
+            $disciplinas_grupo_i = $aluno->disciplinasGrupo1Disponiveis();
+            $disciplinas_grupo_ii = $aluno->disciplinasGrupo2Disponiveis();
+            
             return view('disciplinas', compact(
                 'disciplinas_obrigatorias', 
                 'disciplinas_grupo_i', 
@@ -27,18 +29,22 @@ class DisciplinasController extends Controller
     }
 
     public function store(Request $request) {
-        $disciplinas_obrigatorias_selecionadas = $request->disciplinas_obrigatorias_selecionadas;
-        $disciplinas_grupo_i_selecionadas = $request->disciplinas_grupo_i_selecionadas;
-        $disciplinas_grupo_ii_selecionadas = $request->disciplinas_grupo_ii_selecionadas;
-        foreach ($disciplinas_obrigatorias_selecionadas as $disciplina) {
+        $this->validate($request, [
+            'ano' => 'required|min:4|max:4',
+            'semestre' => 'required|min:1|max:1',
+            'disciplinas_selecionadas' => 'required|array'
+        ]);
+
+        $disciplinas_selecionadas = $request->disciplinas_selecionadas;
+        foreach ($disciplinas_selecionadas as $disciplina) {
             $disciplina_aluno = new DisciplinaAluno;
-            $disciplina_aluno->periodo($request->ano);
-            $disciplina_aluno->status($request->status);
-            $disciplina_aluno->aluno_id($request->session()->get('aluno_id'));
-            $disciplina_aluno->disciplina_id($disciplina);
+            $disciplina_aluno->periodo = $request->ano . '.' . $request->semestre;
+            $disciplina_aluno->status = $request->status;
+            $disciplina_aluno->aluno_id = $request->session()->get('aluno_id');
+            $disciplina_aluno->disciplina_id = $disciplina;
             $disciplina_aluno->save();
         }
-        return redirect();
+        return back()->with('message', 'Disciplina(s) adicionada(s) com sucesso!');
     }
     
 }
