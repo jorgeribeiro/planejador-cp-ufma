@@ -25,13 +25,15 @@ php -r "if (hash_file('SHA384', 'composer-setup.php') === '544e09ee996cdf60ece38
 php composer-setup.php
 php -r "unlink('composer-setup.php');"
 ```
+Após a instalação, adicione o composer ao PATH do sistema (para poder rodar o comando composer no terminal). Essa parte é diferente em cada sistema operacional, por isso não dá pra eu ensinar aqui. Pesquise um pouco e descubra como fazer.
+
 ## Salvando steps de instalação:
 - git clone nesse repositório
-- composer install dentro da pasta
+- rode composer install dentro da pasta
 - renomear .env.example para .env e colocar o caminho correto do arquivo database.sqlite
-- rodar php artisan key:generate
+- rodar php artisan key:generate dentro da pasta
 - php artisan serve para rodar a aplicação
-- executável em localhost:8000
+- Voilá! Rodando em [localhost:8000]. Abra em qualquer browser.
 
 ## Referências
 - [COCOM - Coordenação de Ciência da Computação - UFMA](http://www.deinf.ufma.br/cocom/site/)
