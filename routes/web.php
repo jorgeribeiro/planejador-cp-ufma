@@ -15,10 +15,7 @@ Route::get('/', function() {
     return view('home');
 });
 
-// Verificar session para página de Dicas
-Route::get('/dicas', function() {
-    return view('dicas');
-});
+Route::get('/dicas', 'DicasController@index');
 
 Route::get('/planejador', 'PlanejadorController@index');
 

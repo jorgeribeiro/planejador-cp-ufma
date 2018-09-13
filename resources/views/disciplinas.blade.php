@@ -19,18 +19,25 @@
                         </thead>
                         <tbody>
                             @foreach ($disciplinas_obrigatorias as $disciplina)
-                                <tr>
-                                    <td>{{ $disciplina->nome }}</td>
-                                    <td>{{ $disciplina->carga_horaria }}h</td>
-                                    <td>
-                                        <label class="checkbox">
-                                            <input type="checkbox" name="disciplinas_selecionadas[]" value="{{ $disciplina->id }}">                                            
-                                        </label>
-                                    </td>
-                                </tr>                        
+                            <tr>
+                                <td>{{ $disciplina->nome }}</td>
+                                <td>{{ $disciplina->carga_horaria }}h</td>
+                                <td>
+                                    <label class="checkbox">
+                                        <input type="checkbox" name="disciplinas_selecionadas[]" value="{{ $disciplina->id }}">                                            
+                                    </label>
+                                </td>
+                            </tr>                        
                             @endforeach
                         </tbody>
                     </table>
+                    @if (count($disciplinas_obrigatorias) === 0)
+                    <article class="message is-link">
+                        <div class="message-body">
+                            Parabéns! Você não tem mais nenhuma disciplina obrigatória pendente.
+                        </div>
+                    </article>
+                    @endif
                 </div>
                 <div class="column">
                     <div>
@@ -46,18 +53,18 @@
                         </thead>
                         <tbody>
                             @foreach ($disciplinas_grupo_i as $disciplina)
-                                <tr>
-                                    <td>{{ $disciplina->nome }}</td>
-                                    <td>{{ $disciplina->carga_horaria }}h</td>
-                                    <td>
-                                        <label class="checkbox">
-                                            <input type="checkbox" name="disciplinas_selecionadas[]" value="{{ $disciplina->id }}">                                            
-                                        </label>
-                                    </td>
-                                </tr>                        
+                            <tr>
+                                <td>{{ $disciplina->nome }}</td>
+                                <td>{{ $disciplina->carga_horaria }}h</td>
+                                <td>
+                                    <label class="checkbox">
+                                        <input type="checkbox" name="disciplinas_selecionadas[]" value="{{ $disciplina->id }}">                                            
+                                    </label>
+                                </td>
+                            </tr>                        
                             @endforeach
                         </tbody>
-                    </table>
+                    </table>                    
                 </div>
                 <div class="column">
                     <div>
@@ -73,15 +80,15 @@
                         </thead>
                         <tbody>
                             @foreach ($disciplinas_grupo_ii as $disciplina)
-                                <tr>
-                                    <td>{{ $disciplina->nome }}</td>
-                                    <td>{{ $disciplina->carga_horaria }}h</td>
-                                    <td>
-                                        <label class="checkbox">
-                                            <input type="checkbox" name="disciplinas_selecionadas[]" value="{{ $disciplina->id }}">                                            
-                                        </label>
-                                    </td>
-                                </tr>                        
+                            <tr>
+                                <td>{{ $disciplina->nome }}</td>
+                                <td>{{ $disciplina->carga_horaria }}h</td>
+                                <td>
+                                    <label class="checkbox">
+                                        <input type="checkbox" name="disciplinas_selecionadas[]" value="{{ $disciplina->id }}">                                            
+                                    </label>
+                                </td>
+                            </tr>                        
                             @endforeach
                         </tbody>
                     </table>
@@ -113,7 +120,7 @@
                         <label class="label">Semestre</label>
                         <div class="control">
                             <input class="input" name="semestre" type="text" value="{{ old('semestre') }}" required>
-                            <p class="help">1 ou 2</p>
+                            <p class="help">1 ou 2 (ou 4 no caso de cadeira de férias)</p>
                         </div>                                                            
                     </div>
 
@@ -127,20 +134,20 @@
 
                     @if (session('message'))
                     <article class="message is-sucess">
-                            <div class="message-body">
-                                {{ session('message') }}
-                            </div>
-                        </article>
+                        <div class="message-body">
+                            {{ session('message') }}
+                        </div>
+                    </article>
                     @endif
 
                     @if (count($errors))
-                        <article class="message is-danger">
-                            <div class="message-body">
-                                <p>- Selecione pelo menos uma disciplina</p>
-                                <p>- Ano precisa ter 4 caracteres (ex: 2018)</p>
-                                <p>- Semestre precisa ter 1 caractere (ex: 1)</p>
-                            </div>
-                        </article>
+                    <article class="message is-danger">
+                        <div class="message-body">
+                            <p>- Selecione pelo menos uma disciplina</p>
+                            <p>- Ano precisa ter 4 caracteres (ex: 2018)</p>
+                            <p>- Semestre precisa ter 1 caractere (ex: 1)</p>
+                        </div>
+                    </article>
                     @endif
                 </div>
             </div>
