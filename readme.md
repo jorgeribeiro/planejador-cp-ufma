@@ -33,7 +33,7 @@ Após a instalação, adicione o composer ao PATH do sistema (para poder rodar o
 - renomear .env.example para .env e colocar o caminho correto do arquivo database.sqlite
 - rodar php artisan key:generate dentro da pasta
 - php artisan serve para rodar a aplicação
-- Voilá! Rodando em [localhost:8000]. Abra em qualquer browser.
+- Voilá! Rodando em localhost:8000. Abra em qualquer browser.
 
 ## Referências
 - [COCOM - Coordenação de Ciência da Computação - UFMA](http://www.deinf.ufma.br/cocom/site/)
