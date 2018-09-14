@@ -130,10 +130,10 @@
                                 Adicionar disciplinas selecionadas
                             </button>
                         </div>
-                    </div>
+                    </div>                    
 
                     @if (session('message'))
-                    <article class="message is-sucess">
+                    <article class="message is-success">
                         <div class="message-body">
                             {{ session('message') }}
                         </div>
@@ -144,11 +144,17 @@
                     <article class="message is-danger">
                         <div class="message-body">
                             <p>- Selecione pelo menos uma disciplina</p>
-                            <p>- Ano precisa ter 4 caracteres (ex: 2018)</p>
-                            <p>- Semestre precisa ter 1 caractere (ex: 1)</p>
+                            <p>- Ano precisa ter 4 números (ex: 2018)</p>
+                            <p>- Semestre precisa ter 1 número (ex: 1)</p>
                         </div>
                     </article>
                     @endif
+
+                    <article class="message is-dark">
+                        <div class="message-body">
+                            As disciplinas aproveitadas devem ser adicionadas em qualquer ano/semestre com status <strong>Aprovada</strong>.
+                        </div>
+                    </article>
                 </div>
             </div>
         </form>

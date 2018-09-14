@@ -63,13 +63,13 @@ INSERT INTO disciplinas(nome,carga_horaria,tipo) VALUES ('Estrutura de Dados I',
 INSERT INTO disciplinas(nome,carga_horaria,tipo) VALUES ('Paradígmas de Programação',60,'Obrigatória');
 INSERT INTO disciplinas(nome,carga_horaria,tipo) VALUES ('Linguagens Formais e Autômatos',60,'Obrigatória');
 INSERT INTO disciplinas(nome,carga_horaria,tipo) VALUES ('Laboratório de Circuitos Digitais I',60,'Obrigatória');
-INSERT INTO disciplinas(nome,carga_horaria,tipo) VALUES ('Estrutura de Dados II',30,'Obrigatória');
+INSERT INTO disciplinas(nome,carga_horaria,tipo) VALUES ('Estrutura de Dados II',60,'Obrigatória');
 INSERT INTO disciplinas(nome,carga_horaria,tipo) VALUES ('Engenharia de Software I',60,'Obrigatória');
 INSERT INTO disciplinas(nome,carga_horaria,tipo) VALUES ('Teoria da Computação',60,'Obrigatória');
 INSERT INTO disciplinas(nome,carga_horaria,tipo) VALUES ('Sistemas Operacionais I',60,'Obrigatória');
 INSERT INTO disciplinas(nome,carga_horaria,tipo) VALUES ('Estatística e Probabilidade',60,'Obrigatória');
 INSERT INTO disciplinas(nome,carga_horaria,tipo) VALUES ('Processo de Desenvolvimento de Software',60,'Obrigatória');
-INSERT INTO disciplinas(nome,carga_horaria,tipo) VALUES ('Redes e Computadores I',60,'Obrigatória');
+INSERT INTO disciplinas(nome,carga_horaria,tipo) VALUES ('Redes de Computadores I',60,'Obrigatória');
 INSERT INTO disciplinas(nome,carga_horaria,tipo) VALUES ('Banco de Dados I',60,'Obrigatória');
 INSERT INTO disciplinas(nome,carga_horaria,tipo) VALUES ('Processos Estocásticos',60,'Obrigatória');
 INSERT INTO disciplinas(nome,carga_horaria,tipo) VALUES ('Compiladores',60,'Obrigatória');

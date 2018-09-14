@@ -17,11 +17,33 @@ class Aluno extends Model
         return $this->hasMany(DisciplinaAluno::class);
     }
 
-    // Apenas as disciplinas com status Aprovado ou Matriculado presentes em DisciplinaAluno
+    // Apenas as disciplinas com status Aprovado ou Matriculado
     public function disciplinasAprovadasOuMatriculadas() {
         return $this->disciplinas()
         ->where('status', 'Aprovado')
         ->orWhere('status', 'Matriculado');
+    }
+
+    // Apenas as disciplinas com status Aprovado
+    public function disciplinasAprovadas() {
+        return $this->disciplinas()
+        ->where('status', 'Aprovado');
+    }
+
+    // Períodos cursados (distinct)
+    public function periodosCursados() {
+        return $this->disciplinas()
+        ->select('periodo')
+        ->distinct()
+        ->orderBy('periodo')
+        ->get()
+        ->pluck('periodo');
+    }
+
+    // Soma das horas cumpridas de disciplinas aprovadas
+    public function horasCumpridas() {
+        return Disciplina::whereIn('id', $this->disciplinasAprovadas()->pluck('disciplina_id'))
+        ->sum('carga_horaria');
     }
 
     // Todas as disciplinas obrigatórias disponíveis (não aprovado ou não matriculado)

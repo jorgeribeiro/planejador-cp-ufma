@@ -2,9 +2,7 @@
 
 <body>
     <section class="section">
-        <div class="container">
-            Building
-        </div>
+        Building
     </section>
 </body>
 </html>

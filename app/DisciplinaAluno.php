@@ -12,5 +12,13 @@ class DisciplinaAluno extends Model
         'periodo', 'status'
     ];
 
+    public function aluno() {
+        return $this->belongsTo(Aluno::class);
+    }
+
+    public function disciplina() {
+        return $this->belongsTo(Disciplina::class);
+    }
+
     public $timestamps = false;
 }
