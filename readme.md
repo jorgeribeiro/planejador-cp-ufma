@@ -27,9 +27,9 @@ e o composer pôde ser utilizado. Já em outros sistemas, pesquise um pouco e de
 
 ## Steps de instalação:
 - ```git clone``` nesse repositório
-- rode ```composer install``` dentro da pasta
-- renomear .env.example para .env e colocar o caminho correto do arquivo database.sqlite
-- rodar ```php artisan key:generate``` dentro da pasta
+- Rode ```composer install``` dentro da pasta
+- Renomear .env.example para .env e colocar o caminho completo do arquivo database.sqlite
+- Rodar ```php artisan key:generate``` dentro da pasta
 - ```php artisan serve``` para rodar a aplicação
 - Voilá! Rodando em localhost:8000. Abra em qualquer browser.
 
