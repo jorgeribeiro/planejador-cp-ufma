@@ -23,14 +23,14 @@ Em construção... Porém é certeza que precisa do gerenciador de dependências
 ```
 sudo apt install composer
 ```
-e o composer pôde ser utilizado. Já em outros sistemas, pesquise um pouco e descubra. É necessário rodar o comando ``` composer install ``` dentro da pasta da aplicação, logo, é preciso configurar o PATH do sistema para utilizar esse comando.
+e o composer pôde ser utilizado. Já em outros sistemas, pesquise um pouco e descubra. É necessário rodar o comando ```composer install``` dentro da pasta da aplicação, logo, é preciso que o comando esteja disponível na linha de comando.
 
 ## Steps de instalação:
-- git clone nesse repositório
-- rode composer install dentro da pasta
+- ```git clone``` nesse repositório
+- rode ```composer install``` dentro da pasta
 - renomear .env.example para .env e colocar o caminho correto do arquivo database.sqlite
-- rodar php artisan key:generate dentro da pasta
-- php artisan serve para rodar a aplicação
+- rodar ```php artisan key:generate``` dentro da pasta
+- ```php artisan serve``` para rodar a aplicação
 - Voilá! Rodando em localhost:8000. Abra em qualquer browser.
 
 ## Referências
