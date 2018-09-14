@@ -14,20 +14,18 @@ O curso possui uma estrutura específica, onde até o 6º período o estudante p
 
 ## Dependências
 - PHP >= 5.6.4
-- PHP SQLite
+- php-pear php-fpm php-dev php-zip php-curl php-xmlrpc php-gd php-mysql php-mbstring php-xml libapache2-mod-php (pesquise um pouco como instalar esses módulos)
 - Composer
 
 ## Instalação
-Em construção... Porém é certeza que precisa do gerenciador de dependências de PHP [Composer](https://getcomposer.org/). Se estiver interessado pode adiantar a instalação. Com o PHP instalado, rode os comandos:
-```
-php -r "copy('https://getcomposer.org/installer', 'composer-setup.php');"
-php -r "if (hash_file('SHA384', 'composer-setup.php') === '544e09ee996cdf60ece3804abc52599c22b1f40f4323403c44d44fdfdd586475ca9813a858088ffbc1f233e9b180f061') { echo 'Installer verified'; } else { echo 'Installer corrupt'; unlink('composer-setup.php'); } echo PHP_EOL;"
-php composer-setup.php
-php -r "unlink('composer-setup.php');"
-```
-Após a instalação, adicione o composer ao PATH do sistema (para poder rodar o comando composer no terminal). Essa parte é diferente em cada sistema operacional, por isso não dá pra eu ensinar aqui. Pesquise um pouco e descubra como fazer.
+Em construção... Porém é certeza que precisa do gerenciador de dependências de PHP [Composer](https://getcomposer.org/). Se estiver interessado pode adiantar a instalação. Existem diversas formas de instalar o composer. No meu caso, rodando no Linux Mint (baseado no Debian), rodei
 
-## Salvando steps de instalação:
+```
+sudo apt install composer
+```
+e o composer pôde ser utilizado. Já em outros sistemas, pesquise um pouco e descubra. É necessário rodar o comando ``` composer install ``` dentro da pasta da aplicação, logo, é preciso configurar o PATH do sistema para utilizar esse comando.
+
+## Steps de instalação:
 - git clone nesse repositório
 - rode composer install dentro da pasta
 - renomear .env.example para .env e colocar o caminho correto do arquivo database.sqlite
