@@ -69,7 +69,7 @@
                                     <td>{{ $horas_cumpridas_grupo_ii }}</td>
                                 </tr>
                                 <tr>
-                                    <th>Pendentes</th>
+                                    <th>Pendente</th>
                                     <td>{{ $horas_pendentes_obrigatorias }}</td>
                                     <td>{{ $horas_pendentes_grupo_i }}</td>
                                     <td>{{ $horas_pendentes_grupo_ii }}</td>

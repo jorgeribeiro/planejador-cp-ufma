@@ -40,13 +40,20 @@ class Aluno extends Model
     }
 
     public function horasCumpridasObrigatorias() {
-        return Disciplina::whereIn('id', $this->disciplinasAprovadas()->pluck('disciplina_id'))
+        $horas_obrigatoria = Disciplina::whereIn('id', $this->disciplinasAprovadas()->pluck('disciplina_id'))
         ->where('tipo', 'Obrigatória')
         ->sum('carga_horaria');
+        if ($horas_obrigatoria > 2595) {
+            return 2595;
+        } else {
+            return $horas_obrigatoria;
+        }
     }
 
     public function horasCumpridasGrupo1() {
-        $horas_grupo_i = Disciplina::whereIn('id', $this->disciplinasAprovadas()->pluck('disciplina_id'))->where('tipo', 'Grupo I')->sum('carga_horaria');
+        $horas_grupo_i = Disciplina::whereIn('id', $this->disciplinasAprovadas()->pluck('disciplina_id'))
+        ->where('tipo', 'Grupo I')
+        ->sum('carga_horaria');
         if ($horas_grupo_i > 720) { 
             return 720;
         } else {
@@ -55,7 +62,9 @@ class Aluno extends Model
     }
 
     public function horasCumpridasGrupo2() {
-        $horas_grupo_ii = Disciplina::whereIn('id', $this->disciplinasAprovadas()->pluck('disciplina_id'))->where('tipo', 'Grupo II')->sum('carga_horaria');
+        $horas_grupo_ii = Disciplina::whereIn('id', $this->disciplinasAprovadas()->pluck('disciplina_id'))
+        ->where('tipo', 'Grupo II')
+        ->sum('carga_horaria');
         if ($horas_grupo_ii > 225) { 
             return 225;
         } else {
