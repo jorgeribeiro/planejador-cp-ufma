@@ -45,8 +45,7 @@ e o composer pôde ser utilizado. Já em outros sistemas, pesquise um pouco e de
 - Renomear .env.example para .env e colocar o caminho completo do arquivo database.sqlite (ele se encontra dentro da basta database)
 - Rodar ```php artisan key:generate```
 - ```php artisan serve``` para rodar a aplicação
-- Voilá! Rodando em localhost:8000. Abra em qualquer browser.-
-
+- Voilá! Rodando em localhost:8000. Abra em qualquer browser.
 
 ## Erros e Pull Requests
 Caso encontre algum erro, abra um tópico em [Issues](https://github.com/jorgimello/planejador-cp-ufma/issues) e eu verificarei. 
