@@ -37,15 +37,16 @@ Em seguida, instale o gerenciador de dependências do PHP [Composer](https://get
 sudo apt install composer
 ```
 e o composer pôde ser utilizado. Já em outros sistemas, pesquise um pouco e descubra. É necessário rodar o comando ```composer install``` dentro da pasta da aplicação, logo, é preciso que o comando esteja disponível na linha de comando.
-É aconselhável ter também conhecimentos básicos de git, para que você mantenha suas alterações de disciplinas salvas em um repositório próprio e não perca nada do que já foi feito. Dá pra utilizar sem precisar de clone, commit e push, porém eu não aconselho.
+É aconselhável ter também conhecimentos básicos de git, para que você mantenha suas alterações de disciplinas salvas em um repositório próprio e não perca nada do que já foi feito. Dá pra utilizar sem precisar salvar tudo em um repositório próprio, porém eu não aconselho.
 
-## Steps de instalação (não vou incluir comandos de git):
+## Steps de instalação:
 - Download ou ```git clone``` esse repositório
 - Rode ```composer install``` dentro da pasta da aplicação
 - Renomear .env.example para .env e colocar o caminho completo do arquivo database.sqlite (ele se encontra dentro da basta database)
 - Rodar ```php artisan key:generate```
 - ```php artisan serve``` para rodar a aplicação
-- Voilá! Rodando em localhost:8000. Abra em qualquer browser.
+- Voilá! Rodando em localhost:8000. Abra em qualquer browser.-
+
 
 ## Erros e Pull Requests
 Caso encontre algum erro, abra um tópico em [Issues](https://github.com/jorgimello/planejador-cp-ufma/issues) e eu verificarei. 
@@ -54,4 +55,4 @@ Sugestões e colaborações são bem vindas. Só abrir um tópico em [Pull reque
 ## Referências
 - [COCOM - Coordenação de Ciência da Computação - UFMA](http://www.deinf.ufma.br/cocom/site/)
 - [SIGAA](https://sigaa.ufma.br)
-- Uma planilha Cronograma que roda pelos pendrives e emails do curso, que alguns usam pra ver as horas pendentes de cada grupo. Não sei quem foi o autor, se alguém souber é só me falar que dou os devidos créditos. Me ajudou e foi a principal inspiração pra eu desenvolver esse Planejador.
+- Uma planilha [Cronograma](https://www.dropbox.com/s/o3acew4zcwwxzu4/Cronograma%20-%20Ci%C3%AAncia%20da%20Computa%C3%A7%C3%A3o.xlsx?dl=0) que roda pelos pendrives e emails do curso, que alguns usam pra ver as horas pendentes de cada grupo. Não sei quem foi o autor, se alguém souber é só me falar que dou os devidos créditos. Me ajudou e foi a principal inspiração pra eu desenvolver esse Planejador.
