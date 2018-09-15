@@ -50,22 +50,22 @@ class Aluno extends Model
         if ($horas_grupo_i > 720) { 
             return 720;
         } else {
-            return horas_grupo_i;
+            return $horas_grupo_i;
         }
     }
 
     public function horasCumpridasGrupo2() {
-        $horas_grupo_i = Disciplina::whereIn('id', $this->disciplinasAprovadas()->pluck('disciplina_id'))->where('tipo', 'Grupo II')->sum('carga_horaria');
-        if ($horas_grupo_i > 225) { 
+        $horas_grupo_ii = Disciplina::whereIn('id', $this->disciplinasAprovadas()->pluck('disciplina_id'))->where('tipo', 'Grupo II')->sum('carga_horaria');
+        if ($horas_grupo_ii > 225) { 
             return 225;
         } else {
-            return horas_grupo_ii;
+            return $horas_grupo_ii;
         }
     }
 
     // Soma das horas cumpridas de disciplinas aprovadas
     public function horasCumpridas() {        
-        return horasCumpridasObrigatorias() + horasCumpridasGrupo1() + horasCumpridasGrupo2();
+        return $this->horasCumpridasObrigatorias() + $this->horasCumpridasGrupo1() + $this->horasCumpridasGrupo2();
     }
 
     // Todas as disciplinas obrigatórias disponíveis (não aprovado ou não matriculado)

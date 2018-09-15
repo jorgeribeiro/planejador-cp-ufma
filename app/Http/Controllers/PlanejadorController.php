@@ -17,10 +17,24 @@ class PlanejadorController extends Controller
             $periodos_cursados = $aluno->periodosCursados();
             $disciplinas_cursadas = $aluno->disciplinas()->get();
             $carga_horaria_cumprida = $aluno->horasCumpridas();
+            $carga_horaria_pendente = 3540 - $carga_horaria_cumprida;
+            $horas_cumpridas_obrigatorias = $aluno->horasCumpridasObrigatorias();
+            $horas_cumpridas_grupo_i = $aluno->horasCumpridasGrupo1();
+            $horas_cumpridas_grupo_ii = $aluno->horasCumpridasGrupo2();
+            $horas_pendentes_obrigatorias = 2595 - $horas_cumpridas_obrigatorias;
+            $horas_pendentes_grupo_i = 720 - $horas_cumpridas_grupo_i;
+            $horas_pendentes_grupo_ii = 225 - $horas_cumpridas_grupo_ii;
             return view('planejador', compact(
                 'periodos_cursados',
                 'disciplinas_cursadas',
-                'carga_horaria_cumprida'
+                'carga_horaria_cumprida',
+                'carga_horaria_pendente',
+                'horas_cumpridas_obrigatorias',
+                'horas_cumpridas_grupo_i',
+                'horas_cumpridas_grupo_ii',
+                'horas_pendentes_obrigatorias',
+                'horas_pendentes_grupo_i',
+                'horas_pendentes_grupo_ii'
             ));
         } else {
             return redirect('/');

@@ -43,7 +43,10 @@
                         <h5 class="subtitle is-5">3540</h5>
                         <h4 class="title is-4">Carga horária total cumprida</h4>
                         <h5 class="subtitle is-5">{{ $carga_horaria_cumprida }}</h5>
-                        <table class="table">
+                        <h4 class="title is-4">Carga horária total pendente</h4>
+                        <h5 class="subtitle is-5">{{ $carga_horaria_pendente }}</h5>
+                        <table
+                         class="table">
                             <thead>
                                 <tr>
                                     <th></th>
@@ -61,9 +64,15 @@
                                 </tr>
                                 <tr>
                                     <th>Cumprida</th>
-                                    <td>2595</td>
-                                    <td>720</td>
-                                    <td>225</td>
+                                    <td>{{ $horas_cumpridas_obrigatorias }}</td>
+                                    <td>{{ $horas_cumpridas_grupo_i }}</td>
+                                    <td>{{ $horas_cumpridas_grupo_ii }}</td>
+                                </tr>
+                                <tr>
+                                    <th>Pendentes</th>
+                                    <td>{{ $horas_pendentes_obrigatorias }}</td>
+                                    <td>{{ $horas_pendentes_grupo_i }}</td>
+                                    <td>{{ $horas_pendentes_grupo_ii }}</td>
                                 </tr>
                             </tbody>
                         </table>                                            
