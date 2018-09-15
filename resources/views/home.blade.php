@@ -32,7 +32,7 @@
                                 <div class="field">
                                     <label class="label">Nome</label>
                                     <div class="control">
-                                        <input class="input" type="text" name="nome" required>
+                                        <input class="input" type="text" name="nome" autofocus required>
                                     </div>
                                 </div>
                                 <div class="field">

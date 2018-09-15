@@ -20,8 +20,7 @@ class Aluno extends Model
     // Apenas as disciplinas com status Aprovado ou Matriculado
     public function disciplinasAprovadasOuMatriculadas() {
         return $this->disciplinas()
-        ->where('status', 'Aprovado')
-        ->orWhere('status', 'Matriculado');
+        ->whereIn('status', ['Aprovado', 'Matriculado']);
     }
 
     // Apenas as disciplinas com status Aprovado
@@ -40,10 +39,33 @@ class Aluno extends Model
         ->pluck('periodo');
     }
 
-    // Soma das horas cumpridas de disciplinas aprovadas
-    public function horasCumpridas() {
+    public function horasCumpridasObrigatorias() {
         return Disciplina::whereIn('id', $this->disciplinasAprovadas()->pluck('disciplina_id'))
+        ->where('tipo', 'Obrigatória')
         ->sum('carga_horaria');
+    }
+
+    public function horasCumpridasGrupo1() {
+        $horas_grupo_i = Disciplina::whereIn('id', $this->disciplinasAprovadas()->pluck('disciplina_id'))->where('tipo', 'Grupo I')->sum('carga_horaria');
+        if ($horas_grupo_i > 720) { 
+            return 720;
+        } else {
+            return horas_grupo_i;
+        }
+    }
+
+    public function horasCumpridasGrupo2() {
+        $horas_grupo_i = Disciplina::whereIn('id', $this->disciplinasAprovadas()->pluck('disciplina_id'))->where('tipo', 'Grupo II')->sum('carga_horaria');
+        if ($horas_grupo_i > 225) { 
+            return 225;
+        } else {
+            return horas_grupo_ii;
+        }
+    }
+
+    // Soma das horas cumpridas de disciplinas aprovadas
+    public function horasCumpridas() {        
+        return horasCumpridasObrigatorias() + horasCumpridasGrupo1() + horasCumpridasGrupo2();
     }
 
     // Todas as disciplinas obrigatórias disponíveis (não aprovado ou não matriculado)
