@@ -31,19 +31,19 @@ Com isso, essa aplicação foi pensada e desenvolvida pra ajudar os estudantes d
 - Composer
 
 ## Instalação
-Em construção... Porém além de ter o PHP instalado e os módulos acima é certeza que precisa do gerenciador de dependências de PHP [Composer](https://getcomposer.org/). Se estiver interessado pode adiantar a instalação. Existem diversas formas de instalar o composer. No meu caso, rodando no Linux Mint (baseado no Debian), rodei
-
+Instale o PHP com a versão mínima indicada nas Dependências. Instale também os módulos informados (caso não instale, provável que dê erro ao utilizar o Composer).
+Em seguida, instale o gerenciador de dependências do PHP [Composer](https://getcomposer.org/). A instalação dele pode variar de sistema para sistema. No meu caso, rodando no Linux Mint (baseado no Debian), rodei
 ```
 sudo apt install composer
 ```
 e o composer pôde ser utilizado. Já em outros sistemas, pesquise um pouco e descubra. É necessário rodar o comando ```composer install``` dentro da pasta da aplicação, logo, é preciso que o comando esteja disponível na linha de comando.
+É aconselhável ter também conhecimentos básicos de git, para que você mantenha suas alterações de disciplinas salvas em um repositório próprio e não perca nada do que já foi feito. Dá pra utilizar sem precisar de clone, commit e push, porém eu não aconselho.
 
-## Steps de instalação:
-- Fork esse repositório (para manter sua base própria de disciplinas)
-- ```git clone``` no seu fork
+## Steps de instalação (não vou incluir comandos de git):
+- Download ou ```git clone``` esse repositório
 - Rode ```composer install``` dentro da pasta da aplicação
-- Renomear .env.example para .env e colocar o caminho completo do arquivo database.sqlite
-- Rodar ```php artisan key:generate``` dentro da pasta
+- Renomear .env.example para .env e colocar o caminho completo do arquivo database.sqlite (ele se encontra dentro da basta database)
+- Rodar ```php artisan key:generate```
 - ```php artisan serve``` para rodar a aplicação
 - Voilá! Rodando em localhost:8000. Abra em qualquer browser.
 
