@@ -15,7 +15,7 @@
         <div class="container">
             <section class="section">
                 <div class="box has-background-light">
-                    <h2 class="title is-2 has-text-centered">Planejador CP (UFMA)</h2>
+                    <div class="has-text-centered"><img src="{{ asset('img/logo1.png') }}"></div>                    
                     <nav class="level">
                         <div class="level-item">
                             <div>
