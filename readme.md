@@ -1,4 +1,6 @@
-# Planejador CP (UFMA)
+<p align="center">
+    <img src="https://raw.githubusercontent.com/jorgimello/planejador-cp-ufma/master/public/img/logo1.png">
+</p>
 
 ## Sobre
 
