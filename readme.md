@@ -42,7 +42,7 @@ e o composer pôde ser utilizado. Já em outros sistemas, pesquise um pouco e de
 ## Steps de instalação:
 - Download ou ```git clone``` esse repositório
 - Rode ```composer install``` dentro da pasta da aplicação
-- Renomear .env.example para .env e colocar o caminho completo do arquivo database.sqlite (ele se encontra dentro da basta database)
+- Renomear .env.example para .env e colocar o caminho completo do arquivo database.sqlite, que se encontra dentro da basta database (.env.example pode estar oculto)
 - Rodar ```php artisan key:generate```
 - ```php artisan serve``` para rodar a aplicação
 - Voilá! Rodando em localhost:8000. Abra em qualquer browser.
