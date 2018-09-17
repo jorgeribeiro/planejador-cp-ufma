@@ -39,20 +39,28 @@
                 <p class="title is-5 has-text-danger">Cálculo de horas</p>
                 <div class="card">
                     <div class="card-content">
-                        <h4 class="title is-4">Carga horária total exigida</h4>
-                        <h5 class="subtitle is-5">3540</h5>
-                        <h4 class="title is-4">Carga horária total cumprida</h4>
-                        <h5 class="subtitle is-5">{{ $carga_horaria_cumprida }}</h5>
-                        <h4 class="title is-4">Carga horária total pendente</h4>
-                        <h5 class="subtitle is-5">{{ $carga_horaria_pendente }}</h5>
-                        <table
-                         class="table">
+                        @if ($graduado === 0)
+                        <article class="message is-info">
+                            <div class="message-header">
+                                <p>Parabéns!</p>
+                            </div>
+                            <div class="message-body">
+                                Você acaba de completar todas as suas horas. Isso quer dizer que você concluiu o curso!
+                                Obrigado por utilizar essa aplicação e espero que você também utilize seu conhecimento e tempo 
+                                para desenvolver coisas úteis para as pessoas. Use seu talento para fazer coisas boas e que podem 
+                                ajudar quem precisa.<br>
+                                Um futuro brilhante o espera! Sucesso na sua carreira.
+                            </div>
+                        </article>                       
+                        @endif                    
+                        <table class="table">
                             <thead>
                                 <tr>
                                     <th></th>
                                     <th>Carga horária Obrigatória</th>
                                     <th>Carga horária eletiva Grupo I</th>
                                     <th>Carga horária eletiva Grupo II</th>
+                                    <th>Total</th>
                                 </tr>
                             </thead>
                             <tbody>
@@ -61,19 +69,47 @@
                                     <td>2595</td>
                                     <td>720</td>
                                     <td>225</td>
+                                    <td>3540</td>
                                 </tr>
                                 <tr>
                                     <th>Cumprida</th>
                                     <td>{{ $horas_cumpridas_obrigatorias }}</td>
                                     <td>{{ $horas_cumpridas_grupo_i }}</td>
                                     <td>{{ $horas_cumpridas_grupo_ii }}</td>
+                                    <td>{{ $horas_cumpridas_obrigatorias + $horas_cumpridas_grupo_i + $horas_cumpridas_grupo_ii }}</td>
                                 </tr>
                                 <tr>
                                     <th>Pendente</th>
-                                    <td>{{ $horas_pendentes_obrigatorias }}</td>
-                                    <td>{{ $horas_pendentes_grupo_i }}</td>
-                                    <td>{{ $horas_pendentes_grupo_ii }}</td>
+                                    <td>{{ 2595 - $horas_cumpridas_obrigatorias }}</td>
+                                    <td>{{ 720 - $horas_cumpridas_grupo_i }}</td>
+                                    <td>{{ 225 - $horas_cumpridas_grupo_ii }}</td>
+                                    <td>{{ (2595 - $horas_cumpridas_obrigatorias) 
+                                            + (720 - $horas_cumpridas_grupo_i) 
+                                            + (225 - $horas_cumpridas_grupo_ii) }}
+                                    </td>
                                 </tr>
+                                @if ($graduado !== 0)                                                                    
+                                <tr>
+                                    <th>Cursando</th>
+                                    <td>{{ $horas_cumprindo_obrigatorias }}</td>
+                                    <td>{{ $horas_cumprindo_grupo_i }}</td>
+                                    <td>{{ $horas_cumprindo_grupo_ii }}</td>
+                                    <td>{{ $horas_cumprindo_obrigatorias 
+                                            + $horas_cumprindo_grupo_i 
+                                            + $horas_cumprindo_grupo_ii }}
+                                    </td>
+                                </tr>                                
+                                <tr>
+                                    <th>Pendente ao fim do semestre</th>
+                                    <td>{{ 2595 - $horas_cumpridas_obrigatorias - $horas_cumprindo_obrigatorias }}</td>
+                                    <td>{{ 720 - $horas_cumpridas_grupo_i - $horas_cumprindo_grupo_i }}</td>
+                                    <td>{{ 225 - $horas_cumpridas_grupo_ii - $horas_cumprindo_grupo_ii }}</td>
+                                    <td>{{ (2595 - $horas_cumpridas_obrigatorias - $horas_cumprindo_obrigatorias) 
+                                            + (720 - $horas_cumpridas_grupo_i - $horas_cumprindo_grupo_i) 
+                                            + (225 - $horas_cumpridas_grupo_ii - $horas_cumprindo_grupo_ii) }}
+                                    </td>
+                                </tr>
+                                @endif
                             </tbody>
                         </table>                                            
                     </div>
