@@ -14,7 +14,7 @@
                         </h4>
                         @foreach ($disciplinas_cursadas as $disciplina_cursada)
                             @if ($disciplina_cursada->periodo === $periodo)
-                            {{ $disciplina_cursada->disciplina->nome }} [{{ $disciplina_cursada->disciplina->tipo }}] <strong>({{ $disciplina_cursada->status }})</strong>
+                            {{ $disciplina_cursada->disciplina->nome }} ({{ $disciplina_cursada->disciplina->carga_horaria }}h) [{{ $disciplina_cursada->disciplina->tipo }}] <strong>({{ $disciplina_cursada->status }})</strong>
                             <div class="buttons has-addons is-marginless">
                                 <a class="button is-small has-text-success" href="/aprovar/{{ $disciplina_cursada->id }}">Aprovado</a>
                                 <a class="button is-small has-text-danger" href="/reprovar/{{ $disciplina_cursada->id }}">Reprovado</a>
@@ -101,12 +101,15 @@
                                 </tr>                                
                                 <tr>
                                     <th>Pendente ao fim do semestre</th>
-                                    <td>{{ 2595 - $horas_cumpridas_obrigatorias - $horas_cumprindo_obrigatorias }}</td>
-                                    <td>{{ 720 - $horas_cumpridas_grupo_i - $horas_cumprindo_grupo_i }}</td>
-                                    <td>{{ 225 - $horas_cumpridas_grupo_ii - $horas_cumprindo_grupo_ii }}</td>
-                                    <td>{{ (2595 - $horas_cumpridas_obrigatorias - $horas_cumprindo_obrigatorias) 
+                                    <td>{{ (2595 - $horas_cumpridas_obrigatorias - $horas_cumprindo_obrigatorias) < 0 ? 0 : 2595 - $horas_cumpridas_obrigatorias - $horas_cumprindo_obrigatorias }}</td>
+                                    <td>{{ (720 - $horas_cumpridas_grupo_i - $horas_cumprindo_grupo_i) < 0 ? 0 : 720 - $horas_cumpridas_grupo_i - $horas_cumprindo_grupo_i }}</td>
+                                    <td>{{ (225 - $horas_cumpridas_grupo_ii - $horas_cumprindo_grupo_ii) < 0 ? 0 : 225 - $horas_cumpridas_grupo_ii - $horas_cumprindo_grupo_ii }}</td>
+                                    <td>{{ ((2595 - $horas_cumpridas_obrigatorias - $horas_cumprindo_obrigatorias) 
                                             + (720 - $horas_cumpridas_grupo_i - $horas_cumprindo_grupo_i) 
-                                            + (225 - $horas_cumpridas_grupo_ii - $horas_cumprindo_grupo_ii) }}
+                                            + (225 - $horas_cumpridas_grupo_ii - $horas_cumprindo_grupo_ii)) < 0 ? 0 : 
+                                                (2595 - $horas_cumpridas_obrigatorias - $horas_cumprindo_obrigatorias) 
+                                                + (720 - $horas_cumpridas_grupo_i - $horas_cumprindo_grupo_i) 
+                                                + (225 - $horas_cumpridas_grupo_ii - $horas_cumprindo_grupo_ii) }}
                                     </td>
                                 </tr>
                                 @endif
