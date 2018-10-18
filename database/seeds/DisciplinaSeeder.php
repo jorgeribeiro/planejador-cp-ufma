@@ -2,7 +2,9 @@
 
 use Illuminate\Database\Seeder;
 
-class DatabaseSeeder extends Seeder
+use App\Disciplina;
+
+class DisciplinaSeeder extends Seeder
 {
     /**
      * Run the database seeds.
@@ -11,7 +13,6 @@ class DatabaseSeeder extends Seeder
      */
     public function run()
     {
-        // $this->call(DisciplinaSeeder::class);
-        // $this->command->info('Disciplina table seeded!');
+        
     }
 }
