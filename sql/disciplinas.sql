@@ -60,7 +60,7 @@ INSERT INTO disciplinas(nome,carga_horaria,tipo) VALUES ('Circuitos Digitais I',
 INSERT INTO disciplinas(nome,carga_horaria,tipo) VALUES ('Física Experimental I',30,'Obrigatória');
 INSERT INTO disciplinas(nome,carga_horaria,tipo) VALUES ('Arquitetura de Computadores',30,'Obrigatória');
 INSERT INTO disciplinas(nome,carga_horaria,tipo) VALUES ('Estrutura de Dados I',60,'Obrigatória');
-INSERT INTO disciplinas(nome,carga_horaria,tipo) VALUES ('Paradígmas de Programação',60,'Obrigatória');
+INSERT INTO disciplinas(nome,carga_horaria,tipo) VALUES ('Paradigmas de Programação',60,'Obrigatória');
 INSERT INTO disciplinas(nome,carga_horaria,tipo) VALUES ('Linguagens Formais e Autômatos',60,'Obrigatória');
 INSERT INTO disciplinas(nome,carga_horaria,tipo) VALUES ('Laboratório de Circuitos Digitais I',60,'Obrigatória');
 INSERT INTO disciplinas(nome,carga_horaria,tipo) VALUES ('Estrutura de Dados II',60,'Obrigatória');
