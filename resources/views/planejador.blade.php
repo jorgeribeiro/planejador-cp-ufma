@@ -114,7 +114,9 @@
                                 </tr>
                                 @endif
                             </tbody>
-                        </table>                                            
+                        </table>
+                        Progresso {{ $porcentagem }}%
+                        <progress class="progress is-success is-medium" value={{ $porcentagem }} max="100">{{ $porcentagem }}%</progress>                                           
                     </div>
                 </div>
             </div> 

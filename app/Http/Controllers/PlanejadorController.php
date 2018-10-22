@@ -27,6 +27,9 @@ class PlanejadorController extends Controller
             $graduado = (2595 - $horas_cumpridas_obrigatorias) 
                         + (720 - $horas_cumpridas_grupo_i) 
                         + (225 - $horas_cumpridas_grupo_ii);
+            $porcentagem = round((($horas_cumpridas_obrigatorias 
+                    + $horas_cumpridas_grupo_i 
+                    + $horas_cumpridas_grupo_ii) / 3540) * 100);
             return view('planejador', compact(
                 'periodos_cursados',
                 'disciplinas_cursadas',
@@ -38,7 +41,8 @@ class PlanejadorController extends Controller
                 'horas_cumprindo_obrigatorias',
                 'horas_cumprindo_grupo_i',
                 'horas_cumprindo_grupo_ii',
-                'graduado'
+                'graduado',
+                'porcentagem'
             ));
         } else {
             return redirect('/');
