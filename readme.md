@@ -41,7 +41,7 @@ sudo apt install composer
 e o composer pôde ser utilizado. Já em outros sistemas, pesquise um pouco e descubra. É necessário rodar o comando ```composer install``` dentro da pasta da aplicação, logo, é preciso que o comando esteja disponível na linha de comando.
 É aconselhável ter também conhecimentos básicos de git, para que você mantenha suas alterações de disciplinas salvas em um repositório próprio e não perca nada do que já foi feito. Dá pra utilizar sem precisar salvar tudo em um repositório próprio, porém eu não aconselho.
 
-## Steps de instalação:
+## Steps de instalação
 - Download ou ```git clone``` esse repositório
 - Rode ```composer install``` dentro da pasta da aplicação
 - Renomear ```.env.example``` para ```.env``` e colocar o caminho completo do arquivo database.sqlite, que se encontra dentro da basta database (```.env.example``` pode estar oculto)
