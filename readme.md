@@ -46,6 +46,8 @@ e o composer pôde ser utilizado. Já em outros sistemas, pesquise um pouco e de
 - Rode ```composer install``` dentro da pasta da aplicação
 - Renomear ```.env.example``` para ```.env``` e colocar o caminho completo do arquivo database.sqlite, que se encontra dentro da basta database (```.env.example``` pode estar oculto)
 - Rodar ```php artisan key:generate```
+
+## Para rodar
 - ```php artisan serve``` para rodar a aplicação
 - Voilá! Rodando em ```localhost:8000```. Abra em qualquer browser.
 
