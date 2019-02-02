@@ -29,7 +29,11 @@ Com isso, essa aplicação foi pensada e desenvolvida pra ajudar os estudantes d
 
 ## Dependências
 - PHP >= 5.6.4
-- php-pear php-fpm php-dev php-zip php-curl php-xmlrpc php-gd php-mysql php-mbstring php-xml libapache2-mod-php (pesquise um pouco como instalar esses módulos)
+- OpenSSL PHP Extension
+- PDO PHP Extension
+- Mbstring PHP Extension
+- Tokenizer PHP Extension
+- XML PHP Extension
 - Composer
 
 ## Instalação
