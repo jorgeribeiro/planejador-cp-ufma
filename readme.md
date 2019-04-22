@@ -21,9 +21,8 @@ Essa é a tabela que detalha as horas do meu histórico. As horas obrigatórias 
 Com isso, essa aplicação foi pensada e desenvolvida pra ajudar os estudantes do curso a planejarem corretamente suas disciplinas, sem fazer horas a mais que não serão contabilizadas ou pensar que possui menos horas pendentes como informado pelo SIGAA. Veja a área de Dicas na aplicação pra ver algumas coisas que você pode fazer pra se graduar mais rápido.
 
 ## Tecnologias
-- PHP
-- SQLite
 - Laravel
+- SQLite
 - [Bulma](https://bulma.io/)
 - git (pra fazer clone, commit, push etc e manter suas disciplinas salvas)
 
